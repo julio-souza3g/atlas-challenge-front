@@ -1,13 +1,24 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "../assets/images/logo.jpeg";
+import api from "../services/api";
 
 export function Login() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleLogin(event: FormEvent) {
     event.preventDefault();
-    navigate("/friends")
+
+    api.post("/login", { email, password }).then((response) => {
+      const { token } = response.data;
+      localStorage.setItem("@AtlasChallenge:token", token);
+      navigate("/friends")
+    }).catch(() => {
+      toast.error("E-mail ou senha inválidos");
+    });
   }
   
   return (
@@ -36,6 +47,8 @@ export function Login() {
                   name="email"
                   type="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-orange-600 focus:outline-none focus:ring-orange-600 sm:text-sm"
                   placeholder="Digite seu email"
@@ -49,6 +62,8 @@ export function Login() {
                   id="password"
                   name="password"
                   type="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                   autoComplete="current-password"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-orange-600 focus:outline-none focus:ring-orange-600 sm:text-sm"

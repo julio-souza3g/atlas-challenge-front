@@ -5,7 +5,8 @@ export function Header() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    navigate("/")
+    localStorage.removeItem("@AtlasChallenge:token");
+    navigate("/");
   }
   
   return (

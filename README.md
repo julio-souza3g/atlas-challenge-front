@@ -6,7 +6,8 @@
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-api">Api</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;    
 </p>
 
 <br>
@@ -41,6 +42,12 @@ A API usada para este projeto foi desenvolvida especificamente para este uso (di
 - Inicie o servidor com `npm run start ou yarn start`
 
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
+
+## 🚀 Deploy
+
+- Deploy realizado no ambiente da [Vercel](https://vercel.com/).
+
+Você também pode acessar este app através [desse link](https://atlas-challenge-front.vercel.app/)
 
 ---
 
